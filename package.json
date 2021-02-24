@@ -15,10 +15,10 @@
     "morgan": "~1.9.1",
     "pg": "^8.5.1",
     "postgres": "^1.0.2",
-    "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.5.0"
   }
 }

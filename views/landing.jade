@@ -18,27 +18,6 @@ html(lang="en")
                   .input-group-append
                     button(type="submit").btn.btn-primary Get Started
      
-          .row
-            .col-md-6 
-              if leads 
-                h1 Leads
-                table.table 
-                  thead
-                    tr
-                      th(scope="col") Email
-                      th(scope="col") Actions
-                      th(scope="col")
-                    tr
-                  tbody
-                    for lead in leads 
-                      tr(id=lead.id) 
-                        td  
-                          span #{lead.email}
-                        td  
-                          a(href="/lead/" + lead.id) Details
-                        td 
-                          button(onClick=`deleteLead('${lead.id}')`).btn.btn-primary Delete
-
     include common/footer.jade
     +footer()
     script(src="/javascripts/leads.js")

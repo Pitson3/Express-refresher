@@ -13,7 +13,12 @@ exports.show_signup = function(req, res, next){
 }
 
 exports.login = function(req, res, next){
-    res.render("user/signup", {formData : {}, errors : {}})
+    //Authenticate and redirection
+    passport.authenticate('local', {
+        successRedirect : '/',
+        failureRedirect : '/login',
+        failureFlash : true
+    })(req, res, next);   
 }
 
 const generateHash = function(password){
@@ -28,6 +33,7 @@ exports.signup = function(req, res, next){
 
     return newUser.save().then(result => {
         passport.authenticate('local', {
+            //Authenticate and redirection
             successRedirect : '/',
             failureRedirect : '/signup',
             failureFlash : true

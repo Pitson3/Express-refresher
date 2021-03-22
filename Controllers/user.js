@@ -41,9 +41,9 @@ exports.signup = function(req, res, next){
     })
 }
 
-exports.logout = (req, res, next){
+exports.logout = function(req, res, next){
     //destroy the session
     req.logout();
-    req.destroy();
+    req.session.destroy();
     res.redirect("/");
 }

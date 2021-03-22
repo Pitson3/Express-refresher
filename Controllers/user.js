@@ -40,3 +40,10 @@ exports.signup = function(req, res, next){
         })(req, res, next);
     })
 }
+
+exports.logout = (req, res, next){
+    //destroy the session
+    req.logout();
+    req.destroy();
+    res.redirect("/");
+}

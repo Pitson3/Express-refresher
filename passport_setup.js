@@ -12,7 +12,7 @@ module.exports = function(passport){
         done(null, user.id)
     });
 
-    passport.deserializeuser(function(id, done){
+    passport.deserializeUser(function(id, done){
         models.User.findOne({
             where : {
                 'id' : id
